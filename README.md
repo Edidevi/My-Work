@@ -1,2 +1,3 @@
-# Osaru Ediae - Network Engineer
+# My Mind
 
+## Osaru Ediae - Network Engineer
