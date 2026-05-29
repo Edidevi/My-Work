@@ -1,3 +1,2 @@
-# Osaru Ediae
 
 
