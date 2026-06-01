@@ -1,6 +1,6 @@
 ## 🛠️ Network Engineering Labs
 
-<img width="200" height="200" alt="1780272347935" src="https://github.com/user-attachments/assets/8d2b1ecb-54e7-4a3c-91ed-e01b1dc3e02e" />
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/2b5d1b89-8831-4e95-b004-56f6a48d8b31" />
 
 
 * **[VLAN L2 Troubleshooting](https://edidevi.github.io/Enterprise-VLAN-Troubleshooting/)**
