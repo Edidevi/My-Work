@@ -37,7 +37,7 @@ labs:
 
   - title: VLAN L3 Design
     icon: "🗂️"
-    url: "#"
+    url: "https://edidevi.github.io/InterVLAN-L3/"
     concepts:
       - Layer 3 switching
       - SVI configurations
