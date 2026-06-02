@@ -43,6 +43,15 @@ labs:
       - Layer 2 switching
       - Trunking
       - Native Vlans
+    
+  - title: VLAN L3 Troubleshooting
+    icon: "🎨"
+    url: "https://edidevi.github.io/Inter-VLAN-L3-troubleshooting/"
+    concepts:
+      - Layer 3 switching
+      - Trunking
+      - DHCP
+      - Native Vlans
 
 # Footer
 footer:
