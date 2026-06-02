@@ -27,29 +27,22 @@ stats:
 
 # Lab projects
 labs:
-  - title: VLAN L2 Troubleshooting
-    icon: "🔍"
-    url: "#"
-    concepts:
-      - Layer 2 switching
-      - Trunking
-      - Native VLANs
 
   - title: VLAN L3 Design
-    icon: "🗂️"
+    icon: "🎨"
     url: "https://edidevi.github.io/InterVLAN-L3/"
     concepts:
       - Layer 3 switching
       - SVI configurations
       - Inter-VLAN routing tables
 
-  - title: Inter-VLAN L3 Troubleshooting
-    icon: "⚙️"
-    url: "#"
+  - title: VLAN trunking lab
+    icon: "🎨"
+    url: "https://edidevi.github.io/Vlan-trunking-lab"
     concepts:
-      - Layer 3 switching
-      - SVI configurations
-      - Inter-VLAN routing tables
+      - Layer 2 switching
+      - Trunking
+      - Native Vlans
 
 # Footer
 footer:
