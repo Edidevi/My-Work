@@ -10,3 +10,7 @@
 * **[Inter-VLAN L3 Troubleshooting](https://edidevi.github.io/Inter-VLAN-L3-troubleshooting/)**
   *Core concepts: Layer 3 switching, SVI configurations, inter-VLAN routing tables.*
 
+* **[VLAN trunking lab](https://https://edidevi.github.io/Vlan-trunking-lab//)**
+  *Core concepts: Layer 3 switching, SVI configurations, inter-VLAN routing tables.*
+   
+
