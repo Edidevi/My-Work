@@ -28,7 +28,7 @@ stats:
 # Lab projects
 labs:
 
-  - title: VLAN L3 Design
+  - title: Inter VLAN L3 lab
     icon: "🎨"
     url: "https://edidevi.github.io/InterVLAN-L3/"
     concepts:
@@ -36,7 +36,7 @@ labs:
       - SVI configurations
       - Inter-VLAN routing tables
 
-  - title: VLAN trunking lab
+  - title: VLAN L2 trunking lab
     icon: "🎨"
     url: "https://edidevi.github.io/Vlan-trunking-lab"
     concepts:
