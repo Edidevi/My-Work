@@ -45,7 +45,7 @@ labs:
       - Native Vlans
     
   - title: VLAN L3 Troubleshooting
-    icon: ":mag:"
+    icon: "🔍"
     url: "https://edidevi.github.io/Inter-VLAN-L3-troubleshooting/"
     concepts:
       - Layer 3 switching
