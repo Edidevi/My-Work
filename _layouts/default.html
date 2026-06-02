@@ -311,6 +311,27 @@
     .topbar-nav { display: none; }
     .stats-row { grid-template-columns: 1fr; }
   }
+ .search-wrap {
+  margin-bottom: 1.2rem;
+}
+
+.search-wrap input {
+  width: 100%;
+  padding: 0.75rem 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  background: var(--card);
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-wrap input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(26,108,245,0.1);
+}
 </style>
 </head>
 <body>
@@ -342,7 +363,14 @@
       <span class="section-eyebrow">Portfolio</span>
       <h2 class="section-title">Network Engineering Labs</h2>
       <p class="section-subtitle">{{ site.description }}</p>
-
+      <div class="search-wrap">
+  <input
+    type="text"
+    id="lab-search"
+    placeholder="Search labs..."
+    oninput="filterLabs()"
+  >
+</div>
       <div class="lab-grid">
         {% for lab in site.labs %}
         <a class="lab-card" href="{{ lab.url }}">
@@ -373,5 +401,15 @@
   </footer>
 
 </div>
+ <script>
+  function filterLabs() {
+    const query = document.getElementById('lab-search').value.toLowerCase();
+    const cards = document.querySelectorAll('.lab-card');
+    cards.forEach(card => {
+      const text = card.innerText.toLowerCase();
+      card.style.display = text.includes(query) ? 'grid' : 'none';
+    });
+  }
+</script>
 </body>
 </html>
