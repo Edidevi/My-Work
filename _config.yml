@@ -53,6 +53,15 @@ labs:
       - DHCP
       - Native Vlans
 
+  - title: VLAN L3 Troubleshooting P2
+    icon: "🔍"
+    url: "https://edidevi.github.io/VLAN-L3-Troubleshooting-P2/"
+    concepts:
+      - Layer 3 switching
+      - Trunking
+      - subnetting 
+      - DHCP
+      
 # Footer
 footer:
   hosted_on: GitHub Pages
