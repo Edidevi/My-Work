@@ -64,6 +64,16 @@ labs:
       - Trunking
       - subnetting 
       - DHCP
+
+  - title: VLAN L3 Troubleshooting P3
+    icon: "🔍"
+    url: "https://edidevi.github.io/VLAN-L3-Troubleshooting-P3/"
+    concepts:
+      - Layer 3 switching
+      - Trunking
+      - subnetting 
+      - DHCP
+      - STP
       
 # Footer
 footer:
