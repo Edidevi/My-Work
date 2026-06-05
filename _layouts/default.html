@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
   :root {
     --ink: #0d1117;
     --paper: #f8f7f4;
@@ -16,20 +16,20 @@
     --border: #e5e2db;
     --card: #ffffff;
   }
-
+ 
   body {
     font-family: 'DM Sans', sans-serif;
     background: var(--paper);
     color: var(--ink);
     min-height: 100vh;
   }
-
+ 
   .site-wrapper {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 2rem;
   }
-
+ 
   /* TOPBAR */
   .topbar {
     display: flex;
@@ -40,7 +40,7 @@
     margin-bottom: 5rem;
     animation: fadeDown 0.6s ease both;
   }
-
+ 
   .topbar-logo {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
@@ -49,13 +49,13 @@
     color: var(--ink);
     text-decoration: none;
   }
-
+ 
   .topbar-nav {
     display: flex;
     gap: 2rem;
     list-style: none;
   }
-
+ 
   .topbar-nav a {
     font-size: 0.85rem;
     font-weight: 500;
@@ -63,9 +63,9 @@
     text-decoration: none;
     transition: color 0.2s;
   }
-
+ 
   .topbar-nav a:hover { color: var(--accent); }
-
+ 
   /* HERO */
   .hero {
     display: grid;
@@ -74,16 +74,16 @@
     align-items: center;
     margin-bottom: 6rem;
   }
-
+ 
   .hero-left { animation: fadeUp 0.7s 0.1s ease both; }
-
+ 
   .avatar-wrap {
     position: relative;
     width: 160px;
     height: 160px;
     margin-bottom: 1.8rem;
   }
-
+ 
   .avatar-wrap::before {
     content: '';
     position: absolute;
@@ -91,29 +91,24 @@
     border-radius: 50%;
     background: linear-gradient(135deg, var(--accent) 0%, #5b9aff 100%);
   }
-
-  .avatar-emoji {
-  position: relative;
-  z-index: 1;
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  background: #1a1a2e;
-  border: 4px solid var(--paper);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  font-size: 6rem;
-  padding-top: 1.5rem;
-}
+ 
+  .avatar-wrap img {
+    position: relative;
+    z-index: 1;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--paper);
+  }
+ 
   .hero-name {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
     font-size: 2rem;
     margin-bottom: 0.5rem;
   }
-
+ 
   .hero-role {
     font-size: 0.9rem;
     color: var(--muted);
@@ -121,7 +116,7 @@
     text-transform: uppercase;
     margin-bottom: 1.6rem;
   }
-
+ 
   .hero-github {
     display: inline-flex;
     align-items: center;
@@ -135,12 +130,12 @@
     border-radius: 6px;
     transition: background 0.2s, transform 0.15s;
   }
-
+ 
   .hero-github:hover { background: var(--accent); transform: translateY(-1px); }
-
+ 
   /* HERO RIGHT */
   .hero-right { animation: fadeUp 0.7s 0.2s ease both; }
-
+ 
   .section-eyebrow {
     display: inline-flex;
     align-items: center;
@@ -152,7 +147,7 @@
     color: var(--accent);
     margin-bottom: 1.2rem;
   }
-
+ 
   .section-eyebrow::before {
     content: '';
     display: block;
@@ -161,14 +156,14 @@
     background: var(--accent);
     border-radius: 2px;
   }
-
+ 
   .section-title {
     font-family: 'Syne', sans-serif;
     font-weight: 700;
     font-size: 1.75rem;
     margin-bottom: 0.6rem;
   }
-
+ 
   .section-subtitle {
     font-size: 0.9rem;
     color: var(--muted);
@@ -176,7 +171,7 @@
     margin-bottom: 2.4rem;
     max-width: 36ch;
   }
-
+ 
   /* LAB CARDS */
   .lab-grid {
     display: flex;
@@ -184,24 +179,25 @@
     gap: 1rem;
     max-height: 380px;
     overflow-y: auto;
-   .lab-grid::-webkit-scrollbar {
-  width: 4px;
-}
-
-.lab-grid::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.lab-grid::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 4px;
-}
-
-.lab-grid:hover::-webkit-scrollbar-thumb {
-  background: var(--accent);
-}
   }
-
+ 
+  .lab-grid::-webkit-scrollbar {
+    width: 4px;
+  }
+ 
+  .lab-grid::-webkit-scrollbar-track {
+    background: transparent;
+  }
+ 
+  .lab-grid::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+  }
+ 
+  .lab-grid:hover::-webkit-scrollbar-thumb {
+    background: var(--accent);
+  }
+ 
   .lab-card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -217,7 +213,7 @@
     position: relative;
     overflow: hidden;
   }
-
+ 
   .lab-card::after {
     content: '';
     position: absolute;
@@ -228,15 +224,15 @@
     transform-origin: bottom;
     transition: transform 0.25s ease;
   }
-
+ 
   .lab-card:hover {
     border-color: #c8d8fa;
     box-shadow: 0 4px 24px rgba(26,108,245,0.08);
     transform: translateX(3px);
   }
-
+ 
   .lab-card:hover::after { transform: scaleY(1); }
-
+ 
   .lab-icon {
     width: 40px;
     height: 40px;
@@ -248,7 +244,7 @@
     font-size: 1.1rem;
     flex-shrink: 0;
   }
-
+ 
   .lab-title {
     font-family: 'Syne', sans-serif;
     font-weight: 600;
@@ -256,23 +252,23 @@
     color: var(--accent);
     margin-bottom: 0.2rem;
   }
-
+ 
   .lab-desc {
     font-size: 0.8rem;
     color: var(--muted);
     line-height: 1.5;
   }
-
+ 
   .lab-desc strong { font-weight: 500; color: #4b5563; }
-
+ 
   .lab-arrow {
     color: var(--border);
     transition: color 0.2s, transform 0.2s;
     flex-shrink: 0;
   }
-
+ 
   .lab-card:hover .lab-arrow { color: var(--accent); transform: translateX(2px); }
-
+ 
   /* STATS */
   .stats-row {
     display: grid;
@@ -285,13 +281,13 @@
     margin-top: 3rem;
     animation: fadeUp 0.7s 0.35s ease both;
   }
-
+ 
   .stat-cell {
     background: var(--card);
     padding: 1.6rem 1.8rem;
     text-align: center;
   }
-
+ 
   .stat-num {
     font-family: 'Syne', sans-serif;
     font-size: 2rem;
@@ -301,9 +297,9 @@
     line-height: 1;
     margin-bottom: 0.35rem;
   }
-
+ 
   .stat-label { font-size: 0.78rem; color: var(--muted); }
-
+ 
   /* FOOTER */
   footer {
     margin-top: 6rem;
@@ -314,21 +310,21 @@
     justify-content: space-between;
     animation: fadeUp 0.7s 0.4s ease both;
   }
-
+ 
   .footer-text { font-size: 0.78rem; color: var(--muted); }
   .footer-text a { color: var(--accent); text-decoration: none; }
   .footer-text a:hover { text-decoration: underline; }
-
+ 
   @keyframes fadeDown {
     from { opacity: 0; transform: translateY(-12px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-
+ 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(18px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-
+ 
   @media (max-width: 760px) {
     .hero { grid-template-columns: 1fr; gap: 3rem; }
     .topbar-nav { display: none; }
@@ -337,7 +333,7 @@
  .search-wrap {
   margin-bottom: 1.2rem;
 }
-
+ 
 .search-wrap input {
   width: 100%;
   padding: 0.75rem 1.2rem;
@@ -350,7 +346,7 @@
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
-
+ 
 .search-wrap input:focus {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(26,108,245,0.1);
@@ -359,7 +355,7 @@
 </head>
 <body>
 <div class="site-wrapper">
-
+ 
   <nav class="topbar">
     <a class="topbar-logo" href="/">{{ site.title | upcase }}</a>
     <ul class="topbar-nav">
@@ -368,11 +364,11 @@
       {% endfor %}
     </ul>
   </nav>
-
+ 
   <section class="hero">
     <div class="hero-left">
       <div class="avatar-wrap">
-        <div class="avatar-emoji">🧑🏿‍💻</div>
+        <img src="{{ site.avatar }}" alt="{{ site.title }}">
       </div>
       <h1 class="hero-name">{{ site.title }}</h1>
       <p class="hero-role">Network Engineer</p>
@@ -381,7 +377,7 @@
         View on GitHub
       </a>
     </div>
-
+ 
     <div class="hero-right">
       <span class="section-eyebrow">Portfolio</span>
       <h2 class="section-title">Network Engineering Labs</h2>
@@ -408,7 +404,7 @@
       </div>
     </div>
   </section>
-
+ 
   <div class="stats-row">
     {% for stat in site.stats %}
     <div class="stat-cell">
@@ -417,12 +413,12 @@
     </div>
     {% endfor %}
   </div>
-
+ 
   <footer>
     <span class="footer-text">Maintained by <a href="https://github.com/{{ site.github_username }}" target="_blank">{{ site.title }}</a></span>
     <span class="footer-text">Hosted on <a href="{{ site.footer.hosted_url }}" target="_blank">{{ site.footer.hosted_on }}</a></span>
   </footer>
-
+ 
 </div>
  <script>
   function filterLabs() {
@@ -436,3 +432,4 @@
 </script>
 </body>
 </html>
+ 
