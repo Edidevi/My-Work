@@ -21,7 +21,7 @@ nav:
 
 # Stats bar
 stats:
-  - number: "3"
+  - number: "4"
     label: Labs Published
   - number: L2–L3
     label: Switching Coverage
