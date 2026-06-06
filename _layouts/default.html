@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OsaruEdiae — Network Engineering Portfolio</title>
+<title>{{ site.title }} — Network Engineering Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -17,116 +17,348 @@
     --card: #ffffff;
   }
 
-  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); min-height: 100vh; }
-  .site-wrapper { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
-
-  .topbar {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 2rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 5rem;
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    min-height: 100vh;
   }
-  .topbar-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
-  .topbar-nav { display: flex; gap: 2rem; list-style: none; }
-  .topbar-nav a { font-size: 0.85rem; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+
+  .site-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* TOPBAR */
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0 1.5rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 5rem;
+    animation: fadeDown 0.6s ease both;
+  }
+
+  .topbar-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .topbar-nav {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .topbar-nav a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
   .topbar-nav a:hover { color: var(--accent); }
 
-  .hero { display: grid; grid-template-columns: 1fr 1.8fr; gap: 5rem; align-items: center; margin-bottom: 6rem; }
+  /* HERO */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: 5rem;
+    align-items: center;
+    margin-bottom: 6rem;
+  }
 
-  .avatar-wrap { position: relative; width: 160px; height: 160px; margin-bottom: 1.8rem; }
-  .avatar-wrap::before { content: ''; position: absolute; inset: -6px; border-radius: 50%; background: linear-gradient(135deg, var(--accent) 0%, #5b9aff 100%); }
+  .hero-left { animation: fadeUp 0.7s 0.1s ease both; }
+
+  .avatar-wrap {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    margin-bottom: 1.8rem;
+  }
+
+  .avatar-wrap::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent) 0%, #5b9aff 100%);
+  }
+
   .avatar-emoji {
-    position: relative; z-index: 1; width: 160px; height: 160px; border-radius: 50%;
-    background: #1a1a2e; border: 4px solid var(--paper);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 5rem; overflow: hidden; padding-top: 1.5rem;
+    position: relative;
+    z-index: 1;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: #1a1a2e;
+    border: 4px solid var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-size: 6rem;
+    padding-top: 1.5rem;
   }
 
-  .hero-name { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 2rem; margin-bottom: 0.5rem; }
-  .hero-role { font-size: 0.9rem; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 1.6rem; }
-  .hero-github {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: var(--ink); color: #fff; text-decoration: none;
-    font-size: 0.82rem; font-weight: 500; padding: 0.65rem 1.2rem;
-    border-radius: 6px; transition: background 0.2s;
+  .hero-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
   }
-  .hero-github:hover { background: var(--accent); }
+
+  .hero-role {
+    font-size: 0.9rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 1.6rem;
+  }
+
+  .hero-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--ink);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 0.65rem 1.2rem;
+    border-radius: 6px;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .hero-github:hover { background: var(--accent); transform: translateY(-1px); }
+
+  /* HERO RIGHT */
+  .hero-right { animation: fadeUp 0.7s 0.2s ease both; }
 
   .section-eyebrow {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.2rem;
   }
-  .section-eyebrow::before { content: ''; display: block; width: 24px; height: 2px; background: var(--accent); border-radius: 2px; }
-  .section-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.75rem; margin-bottom: 0.6rem; }
-  .section-subtitle { font-size: 0.9rem; color: var(--muted); line-height: 1.6; margin-bottom: 2.4rem; max-width: 36ch; }
 
-  .search-wrap { margin-bottom: 1.2rem; }
-  .search-wrap input {
-    width: 100%; padding: 0.75rem 1.2rem;
-    border: 1px solid var(--border); border-radius: 8px;
-    font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
-    background: var(--card); color: var(--ink); outline: none;
+  .section-eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
   }
-  .search-wrap input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(26,108,245,0.1); }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.75rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 2.4rem;
+    max-width: 36ch;
+  }
 
   /* LAB GRID — scrollable */
   .lab-grid {
-    display: flex; flex-direction: column; gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     height: 360px;
     overflow-y: auto;
     overflow-x: hidden;
   }
+
   .lab-grid::-webkit-scrollbar { width: 8px; }
   .lab-grid::-webkit-scrollbar-track { background: transparent; }
   .lab-grid::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
   .lab-grid:hover::-webkit-scrollbar-thumb { background: var(--accent); }
 
   .lab-card {
-    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
-    padding: 1.2rem 1.4rem; display: grid; grid-template-columns: auto 1fr auto;
-    align-items: center; gap: 1rem; text-decoration: none; color: inherit;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    position: relative; overflow: hidden;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.2rem 1.4rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+    position: relative;
+    overflow: hidden;
     flex-shrink: 0;
   }
+
   .lab-card::after {
-    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
-    background: var(--accent); transform: scaleY(0); transform-origin: bottom;
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--accent);
+    transform: scaleY(0);
+    transform-origin: bottom;
     transition: transform 0.25s ease;
   }
-  .lab-card:hover { border-color: #c8d8fa; box-shadow: 0 4px 24px rgba(26,108,245,0.08); }
+
+  .lab-card:hover {
+    border-color: #c8d8fa;
+    box-shadow: 0 4px 24px rgba(26,108,245,0.08);
+    transform: translateX(3px);
+  }
+
   .lab-card:hover::after { transform: scaleY(1); }
 
-  .lab-icon { width: 40px; height: 40px; border-radius: 8px; background: #eef3ff; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
-  .lab-title { font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.95rem; color: var(--accent); margin-bottom: 0.2rem; }
-  .lab-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
-  .lab-desc strong { font-weight: 500; color: #4b5563; }
-  .lab-arrow { color: var(--border); transition: color 0.2s; flex-shrink: 0; }
-  .lab-card:hover .lab-arrow { color: var(--accent); }
-
-  .stats-row {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
-    background: var(--border); border: 1px solid var(--border);
-    border-radius: 12px; overflow: hidden; margin-top: 3rem;
+  .lab-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: #eef3ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
   }
-  .stat-cell { background: var(--card); padding: 1.6rem 1.8rem; text-align: center; }
-  .stat-num { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: var(--accent); display: block; line-height: 1; margin-bottom: 0.35rem; }
+
+  .lab-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--accent);
+    margin-bottom: 0.2rem;
+  }
+
+  .lab-desc {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .lab-desc strong { font-weight: 500; color: #4b5563; }
+
+  .lab-arrow {
+    color: var(--border);
+    transition: color 0.2s, transform 0.2s;
+    flex-shrink: 0;
+  }
+
+  .lab-card:hover .lab-arrow { color: var(--accent); transform: translateX(2px); }
+
+  /* STATS */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 3rem;
+    animation: fadeUp 0.7s 0.35s ease both;
+  }
+
+  .stat-cell {
+    background: var(--card);
+    padding: 1.6rem 1.8rem;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent);
+    display: block;
+    line-height: 1;
+    margin-bottom: 0.35rem;
+  }
+
   .stat-label { font-size: 0.78rem; color: var(--muted); }
 
-  footer { margin-top: 6rem; padding: 2rem 0; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+  /* FOOTER */
+  footer {
+    margin-top: 6rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: fadeUp 0.7s 0.4s ease both;
+  }
+
   .footer-text { font-size: 0.78rem; color: var(--muted); }
   .footer-text a { color: var(--accent); text-decoration: none; }
+  .footer-text a:hover { text-decoration: underline; }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 760px) {
+    .hero { grid-template-columns: 1fr; gap: 3rem; }
+    .topbar-nav { display: none; }
+    .stats-row { grid-template-columns: 1fr; }
+  }
+
+  .search-wrap {
+    margin-bottom: 1.2rem;
+  }
+
+  .search-wrap input {
+    width: 100%;
+    padding: 0.75rem 1.2rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    background: var(--card);
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .search-wrap input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(26,108,245,0.1);
+  }
 </style>
 </head>
 <body>
 <div class="site-wrapper">
 
   <nav class="topbar">
-    <a class="topbar-logo" href="#">OSARUEDIAE</a>
+    <a class="topbar-logo" href="/">{{ site.title | upcase }}</a>
     <ul class="topbar-nav">
-      <li><a href="#">Work</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">GitHub</a></li>
-      <li><a href="#">LinkedIn</a></li>
+      {% for item in site.nav %}
+      <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+      {% endfor %}
     </ul>
   </nav>
 
@@ -135,9 +367,9 @@
       <div class="avatar-wrap">
         <div class="avatar-emoji">🧑🏿‍💻</div>
       </div>
-      <h1 class="hero-name">OsaruEdiae</h1>
+      <h1 class="hero-name">{{ site.title }}</h1>
       <p class="hero-role">Network Engineer</p>
-      <a class="hero-github" href="#">
+      <a class="hero-github" href="https://github.com/{{ site.github_username }}/My-Work" target="_blank">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
         View on GitHub
       </a>
@@ -146,29 +378,37 @@
     <div class="hero-right">
       <span class="section-eyebrow">Portfolio</span>
       <h2 class="section-title">Network Engineering Labs</h2>
-      <p class="section-subtitle">Network Engineer — hands-on labs exploring enterprise switching, VLAN design, and Layer 3 troubleshooting.</p>
+      <p class="section-subtitle">{{ site.description }}</p>
       <div class="search-wrap">
-        <input type="text" placeholder="Search labs..." oninput="filterLabs()" id="lab-search">
+        <input type="text" id="lab-search" placeholder="Search labs..." oninput="filterLabs()">
       </div>
       <div class="lab-grid">
-        <a class="lab-card" href="#"><div class="lab-icon">🎨</div><div><div class="lab-title">Inter VLAN L3 lab</div><div class="lab-desc"><strong>Core concepts:</strong> Layer 3 switching, SVI configurations, Inter-VLAN routing tables</div></div><svg class="lab-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        <a class="lab-card" href="#"><div class="lab-icon">🎨</div><div><div class="lab-title">VLAN L2 trunking lab</div><div class="lab-desc"><strong>Core concepts:</strong> Layer 2 switching, Trunking, Native Vlans</div></div><svg class="lab-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        <a class="lab-card" href="#"><div class="lab-icon">🔍</div><div><div class="lab-title">VLAN L3 Troubleshooting</div><div class="lab-desc"><strong>Core concepts:</strong> Layer 3 switching, Trunking, DHCP, Native Vlans</div></div><svg class="lab-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        <a class="lab-card" href="#"><div class="lab-icon">🔍</div><div><div class="lab-title">VLAN L3 Troubleshooting P2</div><div class="lab-desc"><strong>Core concepts:</strong> Layer 3 switching, Trunking, subnetting, DHCP</div></div><svg class="lab-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        <a class="lab-card" href="#"><div class="lab-icon">🔍</div><div><div class="lab-title">VLAN L3 Troubleshooting P3</div><div class="lab-desc"><strong>Core concepts:</strong> Layer 3 switching, Trunking, subnetting, DHCP, STP</div></div><svg class="lab-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        {% for lab in site.labs %}
+        <a class="lab-card" href="{{ lab.url }}">
+          <div class="lab-icon">{{ lab.icon }}</div>
+          <div class="lab-body">
+            <div class="lab-title">{{ lab.title }}</div>
+            <div class="lab-desc"><strong>Core concepts:</strong> {{ lab.concepts | join: ", " }}</div>
+          </div>
+          <svg class="lab-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        {% endfor %}
       </div>
     </div>
   </section>
 
   <div class="stats-row">
-    <div class="stat-cell"><span class="stat-num">5</span><span class="stat-label">Labs Published</span></div>
-    <div class="stat-cell"><span class="stat-num">L2–L3</span><span class="stat-label">Switching Coverage</span></div>
-    <div class="stat-cell"><span class="stat-num">2 & 3</span><span class="stat-label">OSI Layers Focus</span></div>
+    {% for stat in site.stats %}
+    <div class="stat-cell">
+      <span class="stat-num">{{ stat.number }}</span>
+      <span class="stat-label">{{ stat.label }}</span>
+    </div>
+    {% endfor %}
   </div>
 
   <footer>
-    <span class="footer-text">Maintained by <a href="#">OsaruEdiae</a></span>
-    <span class="footer-text">Hosted on <a href="#">GitHub Pages</a></span>
+    <span class="footer-text">Maintained by <a href="https://github.com/{{ site.github_username }}" target="_blank">{{ site.title }}</a></span>
+    <span class="footer-text">Hosted on <a href="{{ site.footer.hosted_url }}" target="_blank">{{ site.footer.hosted_on }}</a></span>
   </footer>
 
 </div>
@@ -177,7 +417,8 @@
     const query = document.getElementById('lab-search').value.toLowerCase();
     const cards = document.querySelectorAll('.lab-card');
     cards.forEach(card => {
-      card.style.display = card.innerText.toLowerCase().includes(query) ? 'grid' : 'none';
+      const text = card.innerText.toLowerCase();
+      card.style.display = text.includes(query) ? 'grid' : 'none';
     });
   }
 </script>
