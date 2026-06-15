@@ -9,12 +9,8 @@ avatar: https://github.com/user-attachments/assets/5a0e6044-1ba6-4bcc-83d6-d3ba2
 
 # Navigation
 nav:
-  - label: Work
-    url: "#"
   - label: About
     url: https://edidevi.github.io/About/
-  - label: GitHub
-    url: https://github.com/Edidevi/My-Work
   - label: Linkedin
     url: https://www.linkedin.com/in/osaru-e-4011a7192/
   - label: AWS
